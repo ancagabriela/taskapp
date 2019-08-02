@@ -1,20 +1,25 @@
-const express = require('express')
-require('./db/mongoose')
-// const User = require('./models/user')
-// const Task = require('./models/task')
-const userRouter = require('./routers/user')
-const taskRouter = require('./routers/task')
-
-const app = express()
+const app = require('./app')
 const port = process.env.PORT
-
-app.use(express.json())
-app.use(userRouter)
-app.use(taskRouter)
 
 app.listen(port, () =>{
     console.log('Server is up on port ' + port)
 })
+
+//Now we have app.js that contains all this code so no need to have it twice
+// const express = require('express')
+// require('./db/mongoose')
+// // const User = require('./models/user')
+// // const Task = require('./models/task')
+// const userRouter = require('./routers/user')
+// const taskRouter = require('./routers/task')
+
+// const app = express()
+
+// app.use(express.json())
+// app.use(userRouter)
+// app.use(taskRouter)
+
+
 
 //Understanding multer for file uploads
 // const multer = require('multer')
